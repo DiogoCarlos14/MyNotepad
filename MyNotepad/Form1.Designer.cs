@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.rbTexto = new System.Windows.Forms.RichTextBox();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuFicheiro = new System.Windows.Forms.ToolStripSplitButton();
             this.menuFicheiroNovo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFicheiroAbrir = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,12 +57,7 @@
             this.menuFormatarAlinhamentoEsquerda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormatarAlinhamentoCentro = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFormatarAlinhamentoDireita = new System.Windows.Forms.ToolStripMenuItem();
-            this.rbTexto = new System.Windows.Forms.RichTextBox();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.Sobre = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,12 +67,34 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuFicheiro,
             this.menuEditar,
-            this.menuFormatar});
+            this.menuFormatar,
+            this.Sobre});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(784, 37);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // rbTexto
+            // 
+            this.rbTexto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rbTexto.Location = new System.Drawing.Point(0, 37);
+            this.rbTexto.Name = "rbTexto";
+            this.rbTexto.Size = new System.Drawing.Size(784, 704);
+            this.rbTexto.TabIndex = 1;
+            this.rbTexto.Text = "";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 719);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // menuFicheiro
             // 
@@ -92,7 +115,7 @@
             // 
             this.menuFicheiroNovo.Image = global::MyNotepad.Properties.Resources.PaperImagee;
             this.menuFicheiroNovo.Name = "menuFicheiroNovo";
-            this.menuFicheiroNovo.Size = new System.Drawing.Size(194, 36);
+            this.menuFicheiroNovo.Size = new System.Drawing.Size(130, 36);
             this.menuFicheiroNovo.Text = "Novo";
             this.menuFicheiroNovo.Click += new System.EventHandler(this.menuFicheiroNovo_Click);
             // 
@@ -100,7 +123,7 @@
             // 
             this.menuFicheiroAbrir.Image = global::MyNotepad.Properties.Resources.FileImagePaper;
             this.menuFicheiroAbrir.Name = "menuFicheiroAbrir";
-            this.menuFicheiroAbrir.Size = new System.Drawing.Size(194, 36);
+            this.menuFicheiroAbrir.Size = new System.Drawing.Size(130, 36);
             this.menuFicheiroAbrir.Text = "Abrir";
             this.menuFicheiroAbrir.Click += new System.EventHandler(this.menuFicheiroAbrir_Click);
             // 
@@ -108,20 +131,20 @@
             // 
             this.menuFicheiroGuardar.Image = global::MyNotepad.Properties.Resources.SaveImagee;
             this.menuFicheiroGuardar.Name = "menuFicheiroGuardar";
-            this.menuFicheiroGuardar.Size = new System.Drawing.Size(194, 36);
+            this.menuFicheiroGuardar.Size = new System.Drawing.Size(130, 36);
             this.menuFicheiroGuardar.Text = "Guardar";
             this.menuFicheiroGuardar.Click += new System.EventHandler(this.menuFicheiroGuardar_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(191, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(127, 6);
             // 
             // menuFicheiroSair
             // 
             this.menuFicheiroSair.Image = global::MyNotepad.Properties.Resources.logoutImagee;
             this.menuFicheiroSair.Name = "menuFicheiroSair";
-            this.menuFicheiroSair.Size = new System.Drawing.Size(194, 36);
+            this.menuFicheiroSair.Size = new System.Drawing.Size(130, 36);
             this.menuFicheiroSair.Text = "Sair";
             this.menuFicheiroSair.Click += new System.EventHandler(this.menuFicheiroSair_Click);
             // 
@@ -144,7 +167,7 @@
             // 
             this.menuEditarCortar.Image = global::MyNotepad.Properties.Resources.CutImagee;
             this.menuEditarCortar.Name = "menuEditarCortar";
-            this.menuEditarCortar.Size = new System.Drawing.Size(194, 36);
+            this.menuEditarCortar.Size = new System.Drawing.Size(170, 36);
             this.menuEditarCortar.Text = "Cortar";
             this.menuEditarCortar.Click += new System.EventHandler(this.menuEditarCortar_Click);
             // 
@@ -152,7 +175,7 @@
             // 
             this.menuEditarCopiar.Image = global::MyNotepad.Properties.Resources.CopyImagee;
             this.menuEditarCopiar.Name = "menuEditarCopiar";
-            this.menuEditarCopiar.Size = new System.Drawing.Size(194, 36);
+            this.menuEditarCopiar.Size = new System.Drawing.Size(170, 36);
             this.menuEditarCopiar.Text = "Copiar";
             this.menuEditarCopiar.Click += new System.EventHandler(this.menuEditarCopiar_Click);
             // 
@@ -160,20 +183,20 @@
             // 
             this.menuEditarColar.Image = global::MyNotepad.Properties.Resources.ColarImagee;
             this.menuEditarColar.Name = "menuEditarColar";
-            this.menuEditarColar.Size = new System.Drawing.Size(194, 36);
+            this.menuEditarColar.Size = new System.Drawing.Size(170, 36);
             this.menuEditarColar.Text = "Colar";
             this.menuEditarColar.Click += new System.EventHandler(this.menuEditarColar_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(191, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(167, 6);
             // 
             // menuEditarSelecionar
             // 
             this.menuEditarSelecionar.Image = global::MyNotepad.Properties.Resources.SelecionarImagee;
             this.menuEditarSelecionar.Name = "menuEditarSelecionar";
-            this.menuEditarSelecionar.Size = new System.Drawing.Size(194, 36);
+            this.menuEditarSelecionar.Size = new System.Drawing.Size(170, 36);
             this.menuEditarSelecionar.Text = "Selecionar tudo";
             this.menuEditarSelecionar.Click += new System.EventHandler(this.menuEditarSelecionar_Click);
             // 
@@ -181,7 +204,7 @@
             // 
             this.menuEditarProcurar.Image = global::MyNotepad.Properties.Resources.SearchImagee;
             this.menuEditarProcurar.Name = "menuEditarProcurar";
-            this.menuEditarProcurar.Size = new System.Drawing.Size(194, 36);
+            this.menuEditarProcurar.Size = new System.Drawing.Size(170, 36);
             this.menuEditarProcurar.Text = "Procurar";
             this.menuEditarProcurar.Click += new System.EventHandler(this.menuEditarProcurar_Click);
             // 
@@ -201,7 +224,7 @@
             // 
             this.menuFormatarLetra.Image = global::MyNotepad.Properties.Resources.LetterImagge;
             this.menuFormatarLetra.Name = "menuFormatarLetra";
-            this.menuFormatarLetra.Size = new System.Drawing.Size(194, 36);
+            this.menuFormatarLetra.Size = new System.Drawing.Size(157, 36);
             this.menuFormatarLetra.Text = "Letra ";
             this.menuFormatarLetra.Click += new System.EventHandler(this.menuFormatarLetra_Click);
             // 
@@ -212,14 +235,14 @@
             this.menuFormatarCoresFundo});
             this.menuFormatarCores.Image = global::MyNotepad.Properties.Resources.ColorsImagee;
             this.menuFormatarCores.Name = "menuFormatarCores";
-            this.menuFormatarCores.Size = new System.Drawing.Size(194, 36);
+            this.menuFormatarCores.Size = new System.Drawing.Size(157, 36);
             this.menuFormatarCores.Text = "Cores";
             // 
             // menuFormatarCoresLetra
             // 
             this.menuFormatarCoresLetra.Image = global::MyNotepad.Properties.Resources.LettersImagee2;
             this.menuFormatarCoresLetra.Name = "menuFormatarCoresLetra";
-            this.menuFormatarCoresLetra.Size = new System.Drawing.Size(194, 36);
+            this.menuFormatarCoresLetra.Size = new System.Drawing.Size(122, 36);
             this.menuFormatarCoresLetra.Text = "Letra";
             this.menuFormatarCoresLetra.Click += new System.EventHandler(this.menuFormatarCoresLetra_Click);
             // 
@@ -227,7 +250,7 @@
             // 
             this.menuFormatarCoresFundo.Image = global::MyNotepad.Properties.Resources.BucketImagee;
             this.menuFormatarCoresFundo.Name = "menuFormatarCoresFundo";
-            this.menuFormatarCoresFundo.Size = new System.Drawing.Size(194, 36);
+            this.menuFormatarCoresFundo.Size = new System.Drawing.Size(122, 36);
             this.menuFormatarCoresFundo.Text = "Fundo";
             this.menuFormatarCoresFundo.Click += new System.EventHandler(this.menuFormatarCoresFundo_Click);
             // 
@@ -239,14 +262,14 @@
             this.menuFormatarAlinhamentoDireita});
             this.menuFormatarAlinhamento.Image = global::MyNotepad.Properties.Resources.AlignImagee;
             this.menuFormatarAlinhamento.Name = "menuFormatarAlinhamento";
-            this.menuFormatarAlinhamento.Size = new System.Drawing.Size(194, 36);
+            this.menuFormatarAlinhamento.Size = new System.Drawing.Size(157, 36);
             this.menuFormatarAlinhamento.Text = "Alinhamento";
             // 
             // menuFormatarAlinhamentoEsquerda
             // 
             this.menuFormatarAlinhamentoEsquerda.Image = global::MyNotepad.Properties.Resources.AlignLeftImagee;
             this.menuFormatarAlinhamentoEsquerda.Name = "menuFormatarAlinhamentoEsquerda";
-            this.menuFormatarAlinhamentoEsquerda.Size = new System.Drawing.Size(194, 36);
+            this.menuFormatarAlinhamentoEsquerda.Size = new System.Drawing.Size(136, 36);
             this.menuFormatarAlinhamentoEsquerda.Text = "Esquerda";
             this.menuFormatarAlinhamentoEsquerda.Click += new System.EventHandler(this.menuFormatarAlinhamentoEsquerda_Click);
             // 
@@ -254,7 +277,7 @@
             // 
             this.menuFormatarAlinhamentoCentro.Image = global::MyNotepad.Properties.Resources.AlignCenterImagee;
             this.menuFormatarAlinhamentoCentro.Name = "menuFormatarAlinhamentoCentro";
-            this.menuFormatarAlinhamentoCentro.Size = new System.Drawing.Size(194, 36);
+            this.menuFormatarAlinhamentoCentro.Size = new System.Drawing.Size(136, 36);
             this.menuFormatarAlinhamentoCentro.Text = "Centro";
             this.menuFormatarAlinhamentoCentro.Click += new System.EventHandler(this.menuFormatarAlinhamentoCentro_Click);
             // 
@@ -262,30 +285,20 @@
             // 
             this.menuFormatarAlinhamentoDireita.Image = global::MyNotepad.Properties.Resources.AlignRightImagee;
             this.menuFormatarAlinhamentoDireita.Name = "menuFormatarAlinhamentoDireita";
-            this.menuFormatarAlinhamentoDireita.Size = new System.Drawing.Size(194, 36);
+            this.menuFormatarAlinhamentoDireita.Size = new System.Drawing.Size(136, 36);
             this.menuFormatarAlinhamentoDireita.Text = "Direita";
             this.menuFormatarAlinhamentoDireita.Click += new System.EventHandler(this.menuFormatarAlinhamentoDireita_Click);
             // 
-            // rbTexto
+            // Sobre
             // 
-            this.rbTexto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rbTexto.Location = new System.Drawing.Point(0, 37);
-            this.rbTexto.Name = "rbTexto";
-            this.rbTexto.Size = new System.Drawing.Size(784, 704);
-            this.rbTexto.TabIndex = 1;
-            this.rbTexto.Text = "";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 719);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
+            this.Sobre.AccessibleDescription = "";
+            this.Sobre.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.Sobre.Image = global::MyNotepad.Properties.Resources.ToolsImagee2;
+            this.Sobre.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Sobre.Name = "Sobre";
+            this.Sobre.Size = new System.Drawing.Size(71, 34);
+            this.Sobre.Text = "Sobre";
+            this.Sobre.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // Form1
             // 
@@ -335,6 +348,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripButton Sobre;
     }
 }
 

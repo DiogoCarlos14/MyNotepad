@@ -177,5 +177,10 @@ namespace MyNotepad
         {
             rbTexto.SelectionAlignment = HorizontalAlignment.Right;
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Autor: Diogo Correia Carlos\nVersão: 69\nDireitos Autorais: TGPSI", "Informações sobre aplicativo");
+        }
     }
 }
